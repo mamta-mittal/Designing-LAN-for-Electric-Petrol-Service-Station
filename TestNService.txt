@@ -1,0 +1,577 @@
+
+TestNService#show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       a - application route
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+      10.0.0.0/8 is variably subnetted, 32 subnets, 2 masks
+C        10.15.1.0/24 is directly connected, Vlan1
+L        10.15.1.1/32 is directly connected, Vlan1
+C        10.15.2.0/24 is directly connected, Vlan2
+L        10.15.2.1/32 is directly connected, Vlan2
+C        10.15.3.0/24 is directly connected, Vlan3
+L        10.15.3.1/32 is directly connected, Vlan3
+C        10.15.4.0/24 is directly connected, Vlan4
+L        10.15.4.1/32 is directly connected, Vlan4
+C        10.15.5.0/24 is directly connected, Vlan5
+L        10.15.5.1/32 is directly connected, Vlan5
+C        10.15.6.0/24 is directly connected, Vlan6
+L        10.15.6.1/32 is directly connected, Vlan6
+C        10.15.7.0/24 is directly connected, Vlan7
+L        10.15.7.1/32 is directly connected, Vlan7
+C        10.15.8.0/24 is directly connected, Vlan8
+L        10.15.8.1/32 is directly connected, Vlan8
+C        10.15.9.0/24 is directly connected, Vlan9
+L        10.15.9.1/32 is directly connected, Vlan9
+C        10.15.10.0/24 is directly connected, Vlan10
+L        10.15.10.1/32 is directly connected, Vlan10
+C        10.15.11.0/24 is directly connected, Vlan11
+L        10.15.11.1/32 is directly connected, Vlan11
+C        10.15.12.0/24 is directly connected, Vlan12
+L        10.15.12.1/32 is directly connected, Vlan12
+C        10.15.13.0/24 is directly connected, Vlan13
+L        10.15.13.1/32 is directly connected, Vlan13
+C        10.15.14.0/24 is directly connected, Vlan14
+L        10.15.14.1/32 is directly connected, Vlan14
+C        10.15.15.0/24 is directly connected, Vlan15
+L        10.15.15.1/32 is directly connected, Vlan15
+C        10.15.16.0/24 is directly connected, Vlan16
+L        10.15.16.1/32 is directly connected, Vlan16
+
+TestNService>en
+Password:
+TestNService#
+TestNService#
+TestNService#show inter
+TestNService#show ip inter
+TestNService#show ip interface bri
+TestNService#show ip interface brief vlan 2
+Interface              IP-Address      OK? Method Status                Protocol
+Vlan2                  10.15.2.1       YES NVRAM  up                    up
+
+TestNService#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+TestNService(config)#interf
+TestNService(config)#exit
+TestNService#show interfaces switchport
+Name: Gi0/0
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: negotiate
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 1 (default)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: enabled
+Voice VLAN: none
+Administrative private-vlan host-association: none
+Administrative private-vlan mapping: none
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Appliance trust: none
+
+Name: Gi0/1
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: negotiate
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 1 (default)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: enabled
+Voice VLAN: none
+Administrative private-vlan host-association: none
+Administrative private-vlan mapping: none
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Appliance trust: none
+
+Name: Gi0/2
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: negotiate
+Negotiation of Trunking: Off
+Access Mode VLAN: 1 (default)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: enabled
+Voice VLAN: none
+Administrative private-vlan host-association: none
+Administrative private-vlan mapping: none
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Appliance trust: none
+
+Name: Gi0/3
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: down
+Administrative Trunking Encapsulation: negotiate
+Negotiation of Trunking: Off
+Access Mode VLAN: 2 (Hosts)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: enabled
+Voice VLAN: none
+Administrative private-vlan host-association: none
+Administrative private-vlan mapping: none
+Administrative private-vlan trunk native VLAN: none
+ --More--
+*Nov  8 22:02:37.198: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discover                                                                       ed on GigabitEthernet3/0 (999), with Switch GigabitEthernet1/0 (1).
+Administrative private-vlan trunk Native VLAN tagging: enabled
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk associations: none
+Administrative private-vlan trunk mappings: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+
+Protected: false
+Appliance trust: none
+
+Name: Gi1/0
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: negotiate
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 5 (Clients)
+Trunking Native Mode VLAN: 1 (default)
+Administrative Native VLAN tagging: enabled
+Voice VLAN: none
+Administrative private-vlan host-association: none
+Administrative private-vlan mapping: none
+
+TestNService#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+
+TestNService(config)#interface range
+TestNService(config)#interface range g
+*Nov  8 22:03:20.094: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discover                                                                       ed on GigabitEthernet3/0 (999), with Switch GigabitEthernet1/0 (1).i
+TestNService(config)#interface range gi0/0-1
+TestNService(config-if-range)#swit
+TestNService(config-if-range)#switchport acc
+TestNService(config-if-range)#switchport access vlan
+TestNService(config-if-range)#switchport access vlan 2
+TestNService(config-if-range)#exit
+TestNService(config)#exit
+
+TestNService#copy running-config sta
+TestNService#copy running-config startup-config
+Destination filename [startup-config]?
+Building configuration...
+Compressed configuration from 6734 bytes to 2914 bytes[OK]
+                                                                       
+TestNService#show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       a - application route
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+      10.0.0.0/8 is variably subnetted, 32 subnets, 2 masks
+C        10.15.1.0/24 is directly connected, Vlan1
+L        10.15.1.1/32 is directly connected, Vlan1
+C        10.15.2.0/24 is directly connected, Vlan2
+L        10.15.2.1/32 is directly connected, Vlan2
+C        10.15.3.0/24 is directly connected, Vlan3
+L        10.15.3.1/32 is directly connected, Vlan3
+C        10.15.4.0/24 is directly connected, Vlan4
+L        10.15.4.1/32 is directly connected, Vlan4
+C        10.15.5.0/24 is directly connected, Vlan5
+L        10.15.5.1/32 is directly connected, Vlan5
+C        10.15.6.0/24 is directly connected, Vlan6
+L        10.15.6.1/32 is directly connected, Vlan6
+C        10.15.7.0/24 is directly connected, Vlan7
+L        10.15.7.1/32 is directly connected, Vlan7
+C        10.15.8.0/24 is directly connected, Vlan8
+L        10.15.8.1/32 is directly connected, Vlan8
+C        10.15.9.0/24 is directly connected, Vlan9
+L        10.15.9.1/32 is directly connected, Vlan9
+C        10.15.10.0/24 is directly connected, Vlan10
+L        10.15.10.1/32 is directly connected, Vlan10
+C        10.15.11.0/24 is directly connected, Vlan11
+L        10.15.11.1/32 is directly connected, Vlan11
+C        10.15.12.0/24 is directly connected, Vlan12
+L        10.15.12.1/32 is directly connected, Vlan12
+C        10.15.13.0/24 is directly connected, Vlan13
+L        10.15.13.1/32 is directly connected, Vlan13
+C        10.15.14.0/24 is directly connected, Vlan14
+L        10.15.14.1/32 is directly connected, Vlan14
+C        10.15.15.0/24 is directly connected, Vlan15
+L        10.15.15.1/32 is directly connected, Vlan15
+C        10.15.16.0/24 is directly connected, Vlan16
+L        10.15.16.1/32 is directly connected, Vlan16
+TestNService#
+TestNService#
+TestNService#
+TestNService#
+TestNService#
+TestNService#
+TestNService#
+TestNService#show runn
+TestNService#show running-config
+Building configuration...
+
+*Nov  8 22:10:27.825: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discover                                                                       ed on GigabitEthernet3/0 (999), with Switch GigabitEthernet1/0 (1).
+Current configuration : 6734 bytes
+!
+! Last configuration change at 22:03:44 UTC Sun Nov 8 2020
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+service compress-config
+!
+hostname TestNService
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable secret 5 $1$iu46$2dzQSA44UQWsswApmsKtV1
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+spanning-tree vlan 1-4094 priority 24576
+!
+vlan internal allocation policy ascending
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0
+ description Hosts
+ switchport access vlan 2
+ switchport mode access
+ media-type rj45
+ negotiation auto
+ spanning-tree portfast edge
+!
+interface GigabitEthernet0/1
+ description Hosts
+ switchport access vlan 2
+ switchport mode access
+ media-type rj45
+ negotiation auto
+ spanning-tree portfast edge
+!
+interface GigabitEthernet0/2
+ description Hosts
+ switchport mode access
+ media-type rj45
+ negotiation auto
+ spanning-tree portfast edge
+!
+interface GigabitEthernet0/3
+ description Hosts
+ switchport access vlan 2
+ switchport mode access
+ media-type rj45
+ negotiation auto
+ spanning-tree portfast edge
+!
+interface GigabitEthernet1/0
+ switchport access vlan 5
+ switchport mode access
+ media-type rj45
+ negotiation auto
+ spanning-tree portfast edge
+!
+interface GigabitEthernet1/1
+ switchport access vlan 5
+ switchport mode access
+ media-type rj45
+ negotiation auto
+ spanning-tree portfast edge
+!
+interface GigabitEthernet1/2
+ media-type rj45
+ negotiation auto
+ spanning-tree portfast edge
+!
+interface GigabitEthernet1/3
+ media-type rj45
+ negotiation auto
+ spanning-tree portfast edge
+!
+interface GigabitEthernet2/0
+ media-type rj45
+ negotiation auto
+ spanning-tree portfast edge
+!
+interface GigabitEthernet2/1
+ media-type rj45
+ negotiation auto
+ spanning-tree portfast edge
+!
+interface GigabitEthernet2/2
+ media-type rj45
+ negotiation auto
+ spanning-tree portfast edge
+!
+interface GigabitEthernet2/3
+ media-type rj45
+ negotiation auto
+ spanning-tree portfast edge
+!
+interface GigabitEthernet3/0
+ description Trunk to Car Wash
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 999
+ switchport mode trunk
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet3/1
+ description Trunk to FortCourtF1
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 999
+ switchport mode trunk
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet3/2
+ description Trunk to FortCourtF2
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 999
+ switchport mode trunk
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet3/3
+ description Trunk to Batteries
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 999
+ switchport mode trunk
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet3/3
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet3/3
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet3/3
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet3/3
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet3/3
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet3/3
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet3/3
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet3/3
+ media-type rj45
+ negotiation auto
+!
+interface Vlan1
+ ip address 10.15.1.1 255.255.255.0
+!
+interface Vlan2
+ description Hosts
+ ip address 10.15.2.1 255.255.255.0
+!
+interface Vlan3
+ description Staff Radio
+ ip address 10.15.3.1 255.255.255.0
+!
+interface Vlan4
+ description Power Infrastructure
+ ip address 10.15.4.1 255.255.255.0
+!
+interface Vlan5
+ description Clients
+ ip address 10.15.5.1 255.255.255.0
+!
+interface Vlan6
+ description InfraServers
+ ip address 10.15.6.1 255.255.255.0
+!
+interface Vlan7
+ description Telephony
+ ip address 10.15.7.1 255.255.255.0
+!
+interface Vlan8
+ description HVAC Infrastructure
+ ip address 10.15.8.1 255.255.255.0
+!
+interface Vlan9
+ description HVAC Infrastructure
+ ip address 10.15.9.1 255.255.255.0
+!
+interface Vlan10
+ description NetMan
+ ip address 10.15.10.1 255.255.255.0
+!
+interface Vlan11
+ description SecurityCameras
+ ip address 10.15.11.1 255.255.255.0
+!
+interface Vlan12
+ description EPOS
+ ip address 10.15.12.1 255.255.255.0
+!
+interface Vlan13
+ description ClusterChat
+ ip address 10.15.13.1 255.255.255.0
+!
+interface Vlan14
+ description Loopbacks
+ ip address 10.15.14.1 255.255.255.0
+!
+interface Vlan15
+ ip address 10.15.15.1 255.255.255.0
+!
+interface Vlan16
+ ip address 10.15.16.1 255.255.255.0
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+!
+!
+control-plane
+!
+banner exec ^C
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************^C
+banner incoming ^C
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************^C
+banner login ^C
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************^C
+!
+line con 0
+ exec-timeout 6 50
+ password 7 12341C341D051F0B262E
+ logging synchronous
+ login
+ history size 10
+line aux 0
+line vty 0 4
+ exec-timeout 5 30
+ password 7 143A0B3F0908242E30
+ logging synchronous
+ login
+ history size 10
+!
+!
+end
+
+

@@ -1,0 +1,70 @@
+PC1- ForecourtF1 PC
+----------------------------
+Welcome to Virtual PC Simulator, version 0.6.1
+Dedicated to Daling.
+Build time: Apr  3 2018 13:45:00
+Copyright (c) 2007-2014, Paul Meng (mirnshi@gmail.com)
+All rights reserved.
+
+VPCS is free software, distributed under the terms of the "BSD" licence.
+Source code and license can be found at vpcs.sf.net.
+For more information, please visit wiki.freecode.com.cn.
+
+Press '?' to get help.
+
+Executing the startup file
+
+
+PC1> ip 10.15.2.210
+Checking for duplicate address...
+PC1 : 10.15.2.210 255.255.255.0
+
+PC1> ping 10.15.2.211
+84 bytes from 10.15.2.211 icmp_seq=1 ttl=64 time=10.791 ms
+84 bytes from 10.15.2.211 icmp_seq=2 ttl=64 time=3.586 ms
+^C
+
+
+PC1> show ip ?
+
+show ip [all]
+  Show IPv4 details for including:
+  VPC Name, IP address, mask, gateway, DNS, MAC, lport, rhost:rport and MTU.
+  (reduced view in tablular format if 'all' option used)
+
+PC1> show ip
+
+NAME        : PC1[1]
+IP/MASK     : 0.0.0.0/0
+GATEWAY     : 0.0.0.0
+DNS         :
+MAC         : 00:50:79:66:68:00
+LPORT       : 20284
+RHOST:PORT  : 127.0.0.1:20285
+MTU:        : 1500
+
+PC1> gateway 10.15.2.1
+Bad command: "gateway 10.15.2.1". Use ? for help.
+
+PC1> ip 10.15.2.210/24 gateway 10.15.2.1
+Checking for duplicate address...
+PC1 : 10.15.2.210 255.255.255.0 gateway 10.15.2.1
+
+PC1> ping 10.15.2.212
+84 bytes from 10.15.2.212 icmp_seq=1 ttl=64 time=6.512 ms
+84 bytes from 10.15.2.212 icmp_seq=2 ttl=64 time=14.423 ms
+84 bytes from 10.15.2.212 icmp_seq=3 ttl=64 time=10.901 ms
+^C
+PC1> ping 10.15.2.213
+84 bytes from 10.15.2.213 icmp_seq=1 ttl=64 time=18.168 ms
+84 bytes from 10.15.2.213 icmp_seq=2 ttl=64 time=8.692 ms
+84 bytes from 10.15.2.213 icmp_seq=3 ttl=64 time=20.181 ms
+84 bytes from 10.15.2.213 icmp_seq=4 ttl=64 time=10.505 ms
+84 bytes from 10.15.2.213 icmp_seq=5 ttl=64 time=8.755 ms
+
+PC1> ping 10.15.2.211
+84 bytes from 10.15.2.211 icmp_seq=1 ttl=64 time=5.608 ms
+84 bytes from 10.15.2.211 icmp_seq=2 ttl=64 time=4.551 ms
+84 bytes from 10.15.2.211 icmp_seq=3 ttl=64 time=2.089 ms
+^C
+PC1>

@@ -1,0 +1,376 @@
+
+      
+
+
+
+ForecourtF2>en
+Password:
+ForecourtF2#
+ForecourtF2#show runn
+ForecourtF2#show running-config
+Building configuration...
+
+Current configuration : 6465 bytes
+!
+! Last configuration change at 21:46:37 UTC Sun Nov 8 2020
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+service compress-config
+!
+hostname ForecourtF2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable secret 5 $1$XOwV$qi5cL66/ucjpoUgRtf9TX1
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0
+ description Hosts
+ switchport access vlan 2
+ switchport mode access
+ media-type rj45
+ negotiation auto
+ spanning-tree portfast edge
+!
+interface GigabitEthernet0/1
+ description Hosts
+ switchport access vlan 2
+ switchport mode access
+ media-type rj45
+ negotiation auto
+ spanning-tree portfast edge
+!
+interface GigabitEthernet0/2
+ description Hosts
+ switchport access vlan 2
+ switchport mode access
+ media-type rj45
+ negotiation auto
+ spanning-tree portfast edge
+!
+interface GigabitEthernet0/3
+ description Hosts
+ switchport access vlan 2
+ switchport mode access
+ media-type rj45
+ negotiation auto
+ spanning-tree portfast edge
+!
+interface GigabitEthernet1/0
+ switchport access vlan 5
+ switchport mode access
+ media-type rj45
+ negotiation auto
+ spanning-tree portfast edge
+!
+interface GigabitEthernet1/1
+ switchport access vlan 5
+ switchport mode access
+ media-type rj45
+ negotiation auto
+ spanning-tree portfast edge
+!
+interface GigabitEthernet1/2
+ switchport access vlan 5
+ switchport mode access
+ media-type rj45
+ negotiation auto
+ spanning-tree portfast edge
+!
+interface GigabitEthernet1/3
+ switchport access vlan 5
+ switchport mode access
+ media-type rj45
+ negotiation auto
+ spanning-tree portfast edge
+!
+interface GigabitEthernet2/0
+ media-type rj45
+ negotiation auto
+ spanning-tree portfast edge
+!
+interface GigabitEthernet2/1
+ media-type rj45
+ negotiation auto
+ spanning-tree portfast edge
+!
+interface GigabitEthernet2/2
+ media-type rj45
+ negotiation auto
+ spanning-tree portfast edge
+!
+interface GigabitEthernet2/3
+ media-type rj45
+ negotiation auto
+ spanning-tree portfast edge
+!
+interface GigabitEthernet3/0
+ description Trunk To TestNService
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 999
+ switchport mode trunk
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet3/1
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet3/2
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet3/3
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet3/3
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet3/3
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet3/3
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet3/3
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet3/3
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet3/3
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet3/3
+ media-type rj45
+ negotiation auto
+!
+interface GigabitEthernet3/3
+ media-type rj45
+ negotiation auto
+!
+interface Vlan1
+ ip address 10.15.1.3 255.255.255.0
+!
+interface Vlan2
+ description Hosts
+ ip address 10.15.2.3 255.255.255.0
+!
+interface Vlan3
+ description Staff Radio
+ ip address 10.15.3.3 255.255.255.0
+!
+interface Vlan4
+ description PowerInfrastructure
+ ip address 10.15.4.3 255.255.255.0
+!
+interface Vlan5
+ description Clients
+ ip address 10.15.5.3 255.255.255.0
+!
+interface Vlan6
+ description InfraServers
+ ip address 10.15.6.3 255.255.255.0
+!
+interface Vlan7
+ description Telephony
+ ip address 10.15.7.3 255.255.255.0
+!
+interface Vlan8
+ description HVAC Infrastructure
+ ip address 10.15.8.3 255.255.255.0
+!
+interface Vlan9
+ description Storage
+ ip address 10.15.9.3 255.255.255.0
+!
+interface Vlan10
+ description NetMan
+ ip address 10.15.10.3 255.255.255.0
+!
+interface Vlan11
+ description Security Cameras
+ ip address 10.15.11.3 255.255.255.0
+!
+interface Vlan12
+ description EPOS
+ ip address 10.15.12.3 255.255.255.0
+!
+interface Vlan13
+ description ClusterChat
+ ip address 10.15.13.3 255.255.255.0
+!
+interface Vlan14
+ description Loopbacks
+ ip address 10.15.14.3 255.255.255.0
+!
+interface Vlan15
+ description Routers
+ ip address 10.15.15.3 255.255.255.0
+!
+interface Vlan16
+ description Links
+ ip address 10.15.16.3 255.255.255.0
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+!
+!
+control-plane
+!
+banner exec ^C
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************^C
+banner incoming ^C
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************^C
+banner login ^C
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************^C
+!
+line con 0
+ exec-timeout 6 50
+ password 7 05261F2C2E425D061500
+ logging synchronous
+ login
+ history size 10
+line aux 0
+line vty 0 4
+ exec-timeout 5 50
+ password 7 013E1F305E07080A35
+ logging synchronous
+ login
+ history size 10
+!
+!
+end
+
+ForecourtF2#
+ForecourtF2#
+ForecourtF2#
+ForecourtF2#
+ForecourtF2#
+ForecourtF2#
+ForecourtF2#
+ForecourtF2#
+ForecourtF2#
+ForecourtF2#
+ForecourtF2#show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       a - application route
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+      10.0.0.0/8 is variably subnetted, 32 subnets, 2 masks
+C        10.15.1.0/24 is directly connected, Vlan1
+L        10.15.1.3/32 is directly connected, Vlan1
+C        10.15.2.0/24 is directly connected, Vlan2
+L        10.15.2.3/32 is directly connected, Vlan2
+C        10.15.3.0/24 is directly connected, Vlan3
+L        10.15.3.3/32 is directly connected, Vlan3
+C        10.15.4.0/24 is directly connected, Vlan4
+L        10.15.4.3/32 is directly connected, Vlan4
+C        10.15.5.0/24 is directly connected, Vlan5
+L        10.15.5.3/32 is directly connected, Vlan5
+C        10.15.6.0/24 is directly connected, Vlan6
+L        10.15.6.3/32 is directly connected, Vlan6
+C        10.15.7.0/24 is directly connected, Vlan7
+L        10.15.7.3/32 is directly connected, Vlan7
+C        10.15.8.0/24 is directly connected, Vlan8
+L        10.15.8.3/32 is directly connected, Vlan8
+C        10.15.9.0/24 is directly connected, Vlan9
+L        10.15.9.3/32 is directly connected, Vlan9
+C        10.15.10.0/24 is directly connected, Vlan10
+L        10.15.10.3/32 is directly connected, Vlan10
+C        10.15.11.0/24 is directly connected, Vlan11
+L        10.15.11.3/32 is directly connected, Vlan11
+C        10.15.12.0/24 is directly connected, Vlan12
+L        10.15.12.3/32 is directly connected, Vlan12
+C        10.15.13.0/24 is directly connected, Vlan13
+L        10.15.13.3/32 is directly connected, Vlan13
+C        10.15.14.0/24 is directly connected, Vlan14
+L        10.15.14.3/32 is directly connected, Vlan14
+C        10.15.15.0/24 is directly connected, Vlan15
+L        10.15.15.3/32 is directly connected, Vlan15
+C        10.15.16.0/24 is directly connected, Vlan16
+L        10.15.16.3/32 is directly connected, Vlan16
+ForecourtF2#
+ForecourtF2#
+ForecourtF2#
+ForecourtF2#
+ForecourtF2#
+ForecourtF2#

@@ -1,0 +1,60 @@
+PC6 In ForeCourtF2
+-----------------------------
+Welcome to Virtual PC Simulator, version 0.6.1
+Dedicated to Daling.
+Build time: Apr  3 2018 13:45:00
+Copyright (c) 2007-2014, Paul Meng (mirnshi@gmail.com)
+All rights reserved.
+
+VPCS is free software, distributed under the terms of the "BSD" licence.
+Source code and license can be found at vpcs.sf.net.
+For more information, please visit wiki.freecode.com.cn.
+
+Press '?' to get help.
+
+Executing the startup file
+
+
+PC6> ip 10.15.2.215 gateway 10.15.2.3
+Checking for duplicate address...
+PC1 : 10.15.2.215 255.255.255.0 gateway 10.15.2.3
+
+PC6> ping 10.15.2.14
+host (10.15.2.14) not reachable
+
+PC6> ping 10.15.2.214
+84 bytes from 10.15.2.214 icmp_seq=1 ttl=64 time=19.504 ms
+84 bytes from 10.15.2.214 icmp_seq=2 ttl=64 time=5.185 ms
+84 bytes from 10.15.2.214 icmp_seq=3 ttl=64 time=9.130 ms
+84 bytes from 10.15.2.214 icmp_seq=4 ttl=64 time=12.891 ms
+84 bytes from 10.15.2.214 icmp_seq=5 ttl=64 time=6.645 ms
+
+PC6> ping 10.15.2.213
+84 bytes from 10.15.2.213 icmp_seq=1 ttl=64 time=14.462 ms
+84 bytes from 10.15.2.213 icmp_seq=2 ttl=64 time=13.442 ms
+84 bytes from 10.15.2.213 icmp_seq=3 ttl=64 time=16.478 ms
+84 bytes from 10.15.2.213 icmp_seq=4 ttl=64 time=14.630 ms
+84 bytes from 10.15.2.213 icmp_seq=5 ttl=64 time=18.249 ms
+
+PC6> ping 10.15.2.212
+84 bytes from 10.15.2.212 icmp_seq=1 ttl=64 time=37.656 ms
+84 bytes from 10.15.2.212 icmp_seq=2 ttl=64 time=18.106 ms
+84 bytes from 10.15.2.212 icmp_seq=3 ttl=64 time=27.108 ms
+84 bytes from 10.15.2.212 icmp_seq=4 ttl=64 time=17.890 ms
+84 bytes from 10.15.2.212 icmp_seq=5 ttl=64 time=17.463 ms
+
+PC6> ping 10.15.2.211
+84 bytes from 10.15.2.211 icmp_seq=1 ttl=64 time=37.760 ms
+84 bytes from 10.15.2.211 icmp_seq=2 ttl=64 time=26.501 ms
+84 bytes from 10.15.2.211 icmp_seq=3 ttl=64 time=20.305 ms
+84 bytes from 10.15.2.211 icmp_seq=4 ttl=64 time=30.314 ms
+84 bytes from 10.15.2.211 icmp_seq=5 ttl=64 time=25.502 ms
+
+PC6> ping 10.15.2.210
+84 bytes from 10.15.2.210 icmp_seq=1 ttl=64 time=22.045 ms
+84 bytes from 10.15.2.210 icmp_seq=2 ttl=64 time=24.634 ms
+84 bytes from 10.15.2.210 icmp_seq=3 ttl=64 time=30.738 ms
+84 bytes from 10.15.2.210 icmp_seq=4 ttl=64 time=25.802 ms
+84 bytes from 10.15.2.210 icmp_seq=5 ttl=64 time=30.863 ms
+
+PC6>

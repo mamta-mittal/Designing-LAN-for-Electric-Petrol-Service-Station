@@ -1,0 +1,739 @@
+
+                             GNU GRUB  version 2.00
+
+Switch>
+Switch>en
+Switch#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#hostname Battery2
+Battery2(config)#conf con
+Battery2(config)#conf con
+Battery2(config)#line con 0
+Battery2(config-line)#password MyConsole
+Battery2(config-line)#login
+Battery2(config-line)#exit
+Battery2(config)#line vty 0 4
+Battery2(config-line)#pass
+Battery2(config-line)#password MyTelnet
+Battery2(config-line)#login
+Battery2(config-line)#exit
+Battery2(config)#serv
+Battery2(config)#service pass
+Battery2(config)#service password-encryption
+Battery2(config)#int gi3/0
+Battery2(config-if)#swit
+Battery2(config-if)#switchport tru
+Battery2(config-if)#switchport trunk enca
+Battery2(config-if)#switchport trunk encapsulation do
+Battery2(config-if)#switchport trunk encapsulation dot1q
+Battery2(config-if)#swi
+Battery2(config-if)#switchport mod
+Battery2(config-if)#switchport mode tru
+Battery2(config-if)#switchport mode trunk
+Battery2(config-if)#swit
+Battery2(config-if)#switchport na
+Battery2(config-if)#switchport nat
+Battery2(config-if)#switchport tru
+Battery2(config-if)#switchport trunk na
+Battery2(config-if)#switchport trunk native vla
+Battery2(config-if)#switchport trunk native vlan 999
+Battery2(config-if)#no shut
+Battery2(config-if)#exit
+Battery2(config)#int gi0/0-3
+                          ^
+% Invalid input detected at '^' marker.
+
+Battery2(config)#int rang
+Battery2(config)#int range gi0/0-3
+
+Battery2(config-if-range)#switchport mode access
+Battery2(config-if-range)#
+Battery2(config-if-range)#exit
+Battery2(config)#vtp mod
+Battery2(config)#vtp mode clie
+Battery2(config)#vtp mode client
+Setting device to VTP Client mode for VLANS.
+
+Battery2#show vla
+Battery2#show vlan
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Gi0/0, Gi0/1, Gi0/2, Gi0/3
+                                                Gi1/0, Gi1/1, Gi1/2, Gi1/3
+                                                Gi2/0, Gi2/1, Gi2/2, Gi2/3
+                                                Gi3/1, Gi3/2, Gi3/3
+2    Hosts                            active
+3    Staff Radio                      active
+4    Power Infrastructure             active
+5    Clients                          active
+6    InfraServers                     active
+7    Telephony                        active
+8    HVAC Infrastructure              active
+9    Storage                          active
+10   NetMan                           active
+11   Security Cameras                 active
+12   EPOS                             active
+13   ClusterChat                      active
+14   Loopbacks                        active
+15   Routers                          active
+16   Links                            active
+1002 fddi-default                     act/unsup
+1003 token-ring-default               act/unsup
+1004 fddinet-default                  act/unsup
+1005 trnet-default                    act/unsup
+
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+1    enet  100001     1500  -      -      -        -    -        0      0
+2    enet  100002     1500  -      -      -        -    -        0      0
+3    enet  100003     1500  -      -      -        -    -        0      0
+4    enet  100004     1500  -      -      -        -    -        0      0
+5    enet  100005     1500  -      -      -        -    -        0      0
+6    enet  100006     1500  -      -      -        -    -        0      0
+7    enet  100007     1500  -      -      -        -    -        0      0
+8    enet  100008     1500  -      -      -        -    -        0      0
+9    enet  100009     1500  -      -      -        -    -        0      0
+10   enet  100010     1500  -      -      -        -    -        0      0
+11   enet  100011     1500  -      -      -        -    -        0      0
+12   enet  100012     1500  -      -      -        -    -        0      0
+13   enet  100013     1500  -      -      -        -    -        0      0
+14   enet  100014     1500  -      -      -        -    -        0      0
+15   enet  100015     1500  -      -      -        -    -        0      0
+16   enet  100016     1500  -      -      -        -    -        0      0
+1002 fddi  101002     1500  -      -      -        -    -        0      0
+1003 tr    101003     1500  -      -      -        -    srb      0      0
+1004 fdnet 101004     1500  -      -      -        ieee -        0      0
+1005 trnet 101005     1500  -      -      -        ibm  -        0      0
+
+Primary Secondary Type              Ports
+------- --------- ----------------- ------------------------------------------
+
+Battery2#
+Battery2#
+Battery2#
+Battery2#
+Battery2#
+Battery2#
+Battery2#
+Battery2#
+Battery2#
+Battery2#
+Battery2#
+Battery2#
+Battery2#
+Battery2#
+Battery2#copy runn
+Battery2#copy running-config sta
+Battery2#copy running-config startup-config
+Destination filename [startup-config]?
+Building configuration...
+Compressed configuration from 3775 bytes to 1737 bytes
+*Nov  9 14:08:58.315: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).[OK]
+Battery2#
+*Nov  9 14:09:00.799: %GRUB-5-CONFIG_WRITING: GRUB configuration is being updated on disk. Please wait...
+*Nov  9 14:09:01.862: %GRUB-5-CONFIG_WRITTEN: GRUB configuration was written to disk successfully.
+*Nov  9 14:09:56.484: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+Battery2#
+Battery2#
+Battery2#
+Battery2#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Battery2(config)#vtp mode cli
+Battery2(config)#vtp mode client
+Device mode already VTP Client for VLANS.
+Battery2(config)#vtp dom
+Battery2(config)#vtp domain ElectricSta
+*Nov  9 14:10:52.912: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).tion
+Domain name already set to ElectricStation.
+Battery2(config)#vtp domain ElectricStation
+Domain name already set to ElectricStation.
+Battery2(config)#vtp pass
+Battery2(config)#vtp password  lyit
+Setting device VTP password to lyit
+Battery2(config)#
+Battery2(config)#
+Battery2(config)#exit
+Battery2#sh
+*Nov  9 14:11:15.596: %SYS-5-CONFIG_I: Configured from console by consoleow vlan
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Gi0/0, Gi0/1, Gi0/2, Gi0/3
+                                                Gi1/0, Gi1/1, Gi1/2, Gi1/3
+                                                Gi2/0, Gi2/1, Gi2/2, Gi2/3
+                                                Gi3/1, Gi3/2, Gi3/3
+2    Hosts                            active
+3    Staff Radio                      active
+4    Power Infrastructure             active
+5    Clients                          active
+6    InfraServers                     active
+7    Telephony                        active
+8    HVAC Infrastructure              active
+9    Storage                          active
+10   NetMan                           active
+11   Security Cameras                 active
+12   EPOS                             active
+13   ClusterChat                      active
+14   Loopbacks                        active
+15   Routers                          active
+16   Links                            active
+1002 fddi-default                     act/unsup
+1003 token-ring-default               act/unsup
+1004 fddinet-default                  act/unsup
+1005 trnet-default                    act/unsup
+
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+1    enet  100001     1500  -      -      -        -    -        0      0
+2    enet  100002     1500  -      -      -        -    -        0      0
+3    enet  100003     1500  -      -      -        -    -        0      0
+
+Battery2#
+*Nov  9 14:11:41.769: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+Battery2#
+Battery2#
+Battery2#
+Battery2#cop
+*Nov  9 14:12:37.974: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).y runn
+% Incomplete command.
+
+Battery2#
+Battery2#
+Battery2#copy runn
+Battery2#copy running-config sta
+Battery2#copy running-config startup-config
+Destination filename [startup-config]?
+Building configuration...
+Compressed configuration from 3775 bytes to 1737 bytes[OK]
+
+Battery2#
+Battery2#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Battery2(config)#int gi1/2-3
+                          ^
+% Invalid input detected at '^' marker.
+
+Battery2(config)#int range gi0/2-3
+Battery2(config-if-range)#swit
+Battery2(config-if-range)#switchport mode acc
+Battery2(config-if-range)#switchport mode access
+Battery2(config-if-range)#swi
+Battery2(config-if-range)#switchport acc
+Battery2(config-if-range)#switchport access  vlan
+Battery2(config-if-range)#switchport access  vlan 15
+Battery2(config-if-range)#
+*Nov  9 14:26:59.628: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+Battery2(config-if-range)#
+Battery2(config-if-range)#des
+Battery2(config-if-range)#description Automation-PLC
+Battery2(config-if-range)#exit
+Battery2(config)#int vlan 15
+Battery2(config-if)#ip
+*Nov  9 14:27:44.820: %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan15, changed state to down add
+Battery2(config-if)#ip address  10.15.15.202 255.255.255.0
+*Nov  9 14:27:56.050: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+Battery2(config-if)#
+Battery2(config-if)#
+Battery2(config-if)#no shut
+Battery2(config-if)#dec
+*Nov  9 14:28:17.502: %LINK-3-UPDOWN: Interface Vlan15, changed state to up
+*Nov  9 14:28:18.569: %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan15, changed state to up
+% Incomplete command.
+
+Battery2(config-if)#
+Battery2(config-if)#des
+Battery2(config-if)#description Automation-PLC
+Battery2(config-if)#exit
+Battery2(config)#exit
+Battery2#
+*Nov  9 14:28:34.794: %SYS-5-CONFIG_I: Configured from console by consolecopy
+% Incomplete command.
+
+Battery2#
+Battery2#copy runn
+Battery2#copy running-config star
+Battery2#copy running-config startup-config
+Destination filename [startup-config]?
+Building configuration...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Battery2 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+*Nov  9 14:39:14.292: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 14:40:09.088: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 14:40:59.615: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 14:41:48.444: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 14:42:35.641: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 14:43:30.385: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 14:44:28.204: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 14:45:16.688: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 14:46:08.790: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 14:47:03.630: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 14:47:58.485: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 14:48:58.127: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 14:49:45.519: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 14:50:33.026: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 14:51:23.248: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 14:52:13.530: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 14:53:06.976: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 14:54:04.009: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 14:54:55.971: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 14:55:45.193: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 14:56:36.336: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 14:57:23.911: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 14:58:15.781: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 14:59:09.187: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:00:03.781: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:01:00.660: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:01:55.917: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:02:54.876: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:03:49.142: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:04:48.685: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:05:42.344: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:06:31.631: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:07:21.170: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:08:11.088: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:08:59.956: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:09:50.347: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:10:38.212: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:11:26.992: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:12:16.108: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:13:12.867: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:14:03.242: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:14:55.366: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:15:52.959: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:16:51.187: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:17:49.395: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:18:41.257: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:19:33.131: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:20:31.405: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:21:21.177: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:22:17.478: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:23:15.212: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:24:15.156: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:25:04.374: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:25:56.667: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:26:44.090: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:27:36.937: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:28:30.737: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:29:24.538: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:30:13.991: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:31:01.832: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:31:55.223: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:32:49.953: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:33:44.904: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:34:32.898: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:35:22.169: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:36:20.651: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:37:15.043: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:38:12.957: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:39:01.273: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:39:54.923: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:40:49.272: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:41:47.809: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:42:46.725: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:43:45.041: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:44:35.439: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:45:33.126: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:46:29.237: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:47:25.818: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:48:14.021: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:49:07.981: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:50:00.358: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:50:56.602: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:51:50.541: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:52:41.030: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:53:29.606: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:54:28.001: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:55:18.896: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:56:14.375: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:57:12.276: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:58:03.902: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:58:57.381: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 15:59:47.885: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:00:39.868: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:01:35.882: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:02:32.002: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:03:20.478: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:04:16.822: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:05:04.892: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:05:54.318: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:06:53.051: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:07:43.596: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:08:35.273: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:09:24.090: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:10:22.456: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:11:17.131: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:12:12.914: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:13:08.119: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:14:03.939: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:14:52.287: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:15:41.314: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:16:38.943: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:17:27.546: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:18:17.858: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:19:08.777: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:19:58.113: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:20:47.478: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:21:38.422: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:22:32.498: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:23:32.827: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:24:22.754: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:25:19.361: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:26:10.845: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:27:00.468: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:27:54.612: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:28:53.465: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:29:52.438: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:30:48.571: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:31:40.574: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:32:31.270: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:33:24.852: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:34:13.135: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:35:02.916: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:35:55.468: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:36:48.186: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:37:44.941: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:38:39.466: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:39:34.119: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:40:32.781: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:41:29.839: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:42:19.474: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:43:09.452: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:44:07.420: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:44:55.167: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:45:48.510: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:46:37.068: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:47:32.299: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:48:21.495: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:49:13.041: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:50:01.053: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:50:55.456: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:51:45.368: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:52:34.502: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:53:26.075: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:54:20.498: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:55:12.397: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:56:06.539: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:56:58.942: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:57:54.501: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:58:44.583: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 16:59:37.482: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:00:36.127: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:01:30.338: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:02:18.510: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:03:10.569: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:04:07.984: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:05:06.681: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:05:57.526: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:06:53.448: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:07:49.276: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:08:47.184: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:09:37.111: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:10:35.202: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:11:32.342: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:12:23.516: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:13:12.472: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:14:02.359: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:14:55.271: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:15:43.761: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:16:33.584: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:17:26.624: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:18:19.273: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:19:12.816: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:20:00.633: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:20:57.973: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:21:54.727: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:22:49.874: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:23:41.380: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:24:31.617: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:25:25.248: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:26:21.390: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:27:16.058: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:28:13.395: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:29:09.484: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:30:07.425: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:30:58.648: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:31:56.315: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:32:44.536: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:33:39.186: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:34:32.903: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:35:21.069: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:36:09.543: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:36:59.172: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:37:51.141: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:38:48.092: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:39:41.277: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:40:33.585: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:41:26.206: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:42:16.681: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:43:11.116: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:44:03.927: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:44:58.284: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:45:46.489: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:46:45.269: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:47:36.918: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:48:33.297: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:49:26.318: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:50:15.774: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:51:04.059: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:51:59.303: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:52:49.736: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:53:49.022: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:54:47.371: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:55:42.975: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:56:36.918: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:57:32.743: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:58:25.298: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 17:59:16.633: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:00:04.006: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:00:56.824: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:01:48.738: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:02:48.017: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:03:40.580: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:04:37.566: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:05:28.685: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:06:24.276: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:07:18.722: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:08:13.596: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:09:05.870: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:10:03.168: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:10:53.966: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:11:41.579: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:12:39.307: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:13:30.306: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:14:21.469: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:15:18.751: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:16:11.863: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:17:06.353: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:17:56.338: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:18:53.473: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:19:52.246: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:20:50.025: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:21:41.209: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:22:39.699: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:23:33.832: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:24:32.016: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:25:28.225: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:26:23.559: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:27:11.255: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:27:59.897: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:28:50.349: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:29:41.376: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:30:35.860: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:31:26.255: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:32:16.823: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:33:12.006: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:34:03.934: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:34:52.122: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:35:46.676: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:36:42.993: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:37:34.345: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:38:24.819: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:39:19.047: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:40:09.000: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:41:06.862: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:41:55.617: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:42:53.980: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:43:52.832: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:44:41.478: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:45:31.842: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:46:25.095: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:47:22.277: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:48:11.083: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:49:10.585: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:50:00.206: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:50:54.304: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:51:42.782: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:52:31.748: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:53:21.460: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:54:11.966: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:55:04.639: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:55:54.263: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:56:45.420: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:57:42.114: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:58:36.620: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 18:59:34.387: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:00:33.473: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:01:21.319: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:02:14.248: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:03:07.521: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:04:05.646: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:04:58.209: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:05:47.892: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:06:36.480: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:07:32.719: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:08:24.392: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:09:15.166: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:10:05.930: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:10:58.288: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:11:57.057: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:12:53.186: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:13:45.540: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:14:36.683: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:15:34.528: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:16:29.613: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:17:25.205: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:18:17.549: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:19:16.945: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:20:05.969: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:20:54.235: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:21:44.166: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:22:43.681: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:23:32.108: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:24:26.635: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:25:16.094: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:26:04.665: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:27:03.758: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:27:55.423: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:28:47.679: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:29:40.789: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:30:29.221: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:31:18.228: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:32:06.656: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:32:57.933: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:33:52.888: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:34:41.085: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:35:30.205: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:36:21.258: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:37:19.585: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:38:08.481: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:39:01.073: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:39:52.377: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:40:40.236: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:41:31.959: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:42:29.199: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:43:19.199: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:44:09.381: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:44:57.301: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:45:49.248: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:46:37.467: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:47:35.618: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:48:26.730: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:49:22.779: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:50:12.654: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:51:04.118: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:51:55.020: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:52:54.100: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:53:48.735: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:54:45.929: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:55:39.050: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:56:32.963: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:57:31.357: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:58:27.066: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 19:59:26.179: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:00:18.605: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:01:06.818: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:01:56.835: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:02:46.104: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:03:35.336: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:04:29.624: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:05:29.790: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:06:22.500: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:07:19.375: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:08:13.751: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:09:09.450: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:10:03.512: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:10:53.590: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:11:46.337: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:12:39.266: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:13:38.825: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:14:35.004: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:15:25.811: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:16:21.773: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:17:16.719: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:18:09.897: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:19:05.245: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:19:55.102: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:20:46.911: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:21:36.051: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:22:27.059: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:23:17.121: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:24:09.739: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:25:02.139: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:25:55.877: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:26:46.351: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:27:42.005: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:28:30.325: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:29:21.712: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:30:14.451: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:31:08.404: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:32:01.463: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:32:50.730: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:33:47.110: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:34:35.529: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:35:33.613: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:36:31.174: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:37:20.497: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:38:14.289: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:39:06.005: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+*Nov  9 20:40:01.229: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet3/0 (999), with Batteries GigabitEthernet1/2 (1).
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************
+
+User Access Verification
+
+Password:
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************
+Battery2>

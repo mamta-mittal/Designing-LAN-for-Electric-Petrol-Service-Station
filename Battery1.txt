@@ -1,0 +1,491 @@
+
+Switch>
+Switch>en
+Switch#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#host
+Switch(config)#hostname Batteries
+Batteries(config)#line con
+Batteries(config)#line console 0
+Batteries(config-line)#pass
+Batteries(config-line)#password MyConsole
+Batteries(config-line)#login
+Batteries(config-line)#exit
+Batteries(config)#line vt
+Batteries(config)#line vty 0 4
+Batteries(config-line)#pass
+Batteries(config-line)#password MyTelnet
+Batteries(config-line)#ena
+Batteries(config-line)#exit
+Batteries(config)#
+Batteries(config)#en
+Batteries(config)#ena
+Batteries(config)#enable sec
+Batteries(config)#enable secret pass
+Batteries(config)#enable secret pass
+Batteries(config)#ser
+Batteries(config)#service pass
+Batteries(config)#service password-encryption
+Batteries(config)#
+Batteries(config)#
+Batteries(config)#int ra
+Batteries(config)#int range gi0/3
+Batteries(config-if-range)#swi
+Batteries(config-if-range)#switchport mode
+Batteries(config-if-range)#switchport mode acc
+Batteries(config-if-range)#switchport mode access
+Batteries(config-if-range)#swi
+Batteries(config-if-range)#switchport acc
+Batteries(config-if-range)#switchport access vla
+Batteries(config-if-range)#switchport access vlan 2
+Batteries(config-if-range)#des
+Batteries(config-if-range)#description Hosts
+Batteries(config-if-range)#exit
+Batteries(config)#int vlan 2
+Batteries(config-if)#ip
+*Nov  9 12:19:40.804: %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan2, changed state to down
+% Incomplete command.
+
+Batteries(config-if)#
+Batteries(config-if)#int vlan 2
+Batteries(config-if)#ip add
+Batteries(config-if)#ip address 10.15.2.201 255.255.255.0
+Batteries(config-if)#no shut
+Batteries(config-if)#exi
+*Nov  9 12:20:15.452: %LINK-3-UPDOWN: Interface Vlan2, changed state to up
+*Nov  9 12:20:16.452: %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan2, changed state to upt
+Batteries(config)#int vlan 1
+Batteries(config-if)#
+*Nov  9 12:20:38.079: %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan1, changed state to down
+Batteries(config-if)#
+Batteries(config-if)#ip add
+Batteries(config-if)#ip address 10.15.1.201 155.255.255.0
+Bad mask 0x9BFFFF00 for address 10.15.1.201
+Batteries(config-if)#ip address 10.15.1.201 255.255.255.0
+Batteries(config-if)#exit
+Batteries(config)#int gi1/1
+Batteries(config-if)#switc
+Batteries(config-if)#switchport en
+Batteries(config-if)#switchport trun
+Batteries(config-if)#switchport trunk enca
+Batteries(config-if)#switchport trunk encapsulation do
+Batteries(config-if)#switchport trunk encapsulation dot1q
+Batteries(config-if)#swu
+Batteries(config-if)#swi
+Batteries(config-if)#switchport tr
+Batteries(config-if)#switchport mod
+Batteries(config-if)#switchport mode  trunk
+Batteries(config-if)#sw
+Batteries(config-if)#switchport tr
+Batteries(config-if)#switchport trunk na
+Batteries(config-if)#switchport trunk native vlan 99
+Batteries(config-if)#switchport trunk native vlan 999
+Batteries(config-if)#no shut
+Batteries(config-if)#
+Batteries(config-if)#exit
+Batteries(config)#
+Batteries(config)#
+Batteries(config)#exit
+Batteries#
+*Nov  9 12:23:52.591: %SYS-5-CONFIG_I: Configured from console by console
+Batteries#
+Batteries#
+Batteries#copy runn
+Batteries#copy running-config sta
+Batteries#copy running-config startup-config
+Destination filename [startup-config]?
+Building configuration...
+Compressed configuration from 3390 bytes to 1706 bytes[OK]
+*Nov  9 12:24:02.803: %GRUB-5-CONFIG_WRITING: GRUB configuration is being updated on disk. Please wait...
+*Nov  9 12:24:03.574: %GRUB-5-CONFIG_WRITTEN: GRUB configuration was written to disk successfully.
+Batteries#
+Batteries#
+Batteries#show vlans
+
+No Virtual LANs configured.
+
+Batteries#
+Batteries#
+Batteries#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Batteries(config)#vtp client
+                      ^
+% Invalid input detected at '^' marker.
+
+Batteries(config)#vtp mode clie
+Batteries(config)#vtp mode client
+Setting device to VTP Client mode for VLANS.
+Batteries(config)#show vla
+Batteries(config)#show vla
+                    ^
+% Invalid input detected at '^' marker.
+
+Batteries(config)#exit
+Batteries#show
+*Nov  9 12:25:05.577: %SYS-5-CONFIG_I: Configured from console by console vl
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Gi0/0, Gi0/1, Gi0/2, Gi1/0
+                                                Gi1/1, Gi1/2, Gi1/3
+2    Hosts                            active    Gi0/3
+3    Staff Radio                      active
+4    Power Infrastructure             active
+5    Clients                          active
+6    InfraServers                     active
+7    Telephony                        active
+8    HVAC Infrastructure              active
+9    Storage                          active
+10   NetMan                           active
+11   Security Cameras                 active
+12   EPOS                             active
+13   ClusterChat                      active
+14   Loopbacks                        active
+15   Routers                          active
+16   Links                            active
+1002 fddi-default                     act/unsup
+1003 token-ring-default               act/unsup
+1004 fddinet-default                  act/unsup
+1005 trnet-default                    act/unsup
+
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+1    enet  100001     1500  -      -      -        -    -        0      0
+2    enet  100002     1500  -      -      -        -    -        0      0
+3    enet  100003     1500  -      -      -        -    -        0      0
+4    enet  100004     1500  -      -      -        -    -        0      0
+5    enet  100005     1500  -      -      -        -    -        0      0
+6    enet  100006     1500  -      -      -        -    -        0      0
+7    enet  100007     1500  -      -      -        -    -        0      0
+8    enet  100008     1500  -      -      -        -    -        0      0
+9    enet  100009     1500  -      -      -        -    -        0      0
+10   enet  100010     1500  -      -      -        -    -        0      0
+11   enet  100011     1500  -      -      -        -    -        0      0
+12   enet  100012     1500  -      -      -        -    -        0      0
+13   enet  100013     1500  -      -      -        -    -        0      0
+14   enet  100014     1500  -      -      -        -    -        0      0
+15   enet  100015     1500  -      -      -        -    -        0      0
+16   enet  100016     1500  -      -      -        -    -        0      0
+1002 fddi  101002     1500  -      -      -        -    -        0      0
+1003 tr    101003     1500  -      -      -        -    srb      0      0
+1004 fdnet 101004     1500  -      -      -        ieee -        0      0
+1005 trnet 101005     1500  -      -      -        ibm  -        0      0
+
+Primary Secondary Type              Ports
+------- --------- ----------------- ------------------------------------------
+
+Batteries#
+Batteries#
+Batteries#
+Batteries#
+Batteries#
+Batteries#
+Batteries#
+Batteries#
+Batteries#
+Batteries#
+Batteries#copy runn
+Batteries#copy running-config sta
+Batteries#copy running-config startup-config
+Destination filename [startup-config]?
+Building configuration...
+Compressed configuration from 3390 bytes to 1703 bytes[OK]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Batteries con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+*Nov  9 13:19:47.930: %LINK-3-UPDOWN: Interface GigabitEthernet1/2, changed state to up
+*Nov  9 13:19:48.936: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1/2, changed state to up
+*Nov  9 13:20:20.938: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1/2, changed state to down
+*Nov  9 13:20:21.939: %LINK-3-UPDOWN: Interface GigabitEthernet1/2, changed state to down
+*Nov  9 13:21:35.930: %LINK-3-UPDOWN: Interface GigabitEthernet1/2, changed state to up
+*Nov  9 13:21:36.929: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1/2, changed state to up
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************
+
+User Access Verification
+
+Password:
+Password:
+Password:
+% Bad passwords
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Batteries con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************
+
+User Access Verification
+
+Password:
+Password:
+Password:
+% Bad passwords
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Batteries con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************
+
+User Access Verification
+
+Password:
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************
+Batteries>en
+Password:
+Password:
+Password:
+% Bad secrets
+
+Batteries>en
+Password:
+Password:
+Password:
+% Bad secrets
+
+Batteries>en
+Password:
+Password:
+Password:
+% Password:  timeout expired!
+% Bad secrets
+
+Batteries>
+*Nov  9 13:41:06.951: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet1/2 (1), with Battery2 GigabitEthernet3/0 (999).
+*Nov  9 13:42:06.330: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet1/2 (1), with Battery2 GigabitEthernet3/0 (999).
+*Nov  9 13:42:58.828: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet1/2 (1), with Battery2 GigabitEthernet3/0 (999).
+*Nov  9 13:43:47.923: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet1/2 (1), with Battery2 GigabitEthernet3/0 (999).
+*Nov  9 13:44:46.716: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet1/2 (1), with Battery2 GigabitEthernet3/0 (999).
+*Nov  9 13:45:42.441: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet1/2 (1), with Battery2 GigabitEthernet3/0 (999).
+*Nov  9 13:46:23.380: %SW_VLAN-4-VTP_USER_NOTIFICATION: VTP protocol user notification: MD5 digest checksum mismatch on receipt of equal revision summary on trunk: Gi1/2
+
+*Nov  9 13:46:34.638: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet1/2 (1), with Battery2 GigabitEthernet3/0 (999).
+*Nov  9 13:47:33.104: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet1/2 (1), with Battery2 GigabitEthernet3/0 (999).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Batteries con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+*Nov  9 13:48:33.674: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet1/2 (1), with Battery2 GigabitEthernet3/0 (999).
+*Nov  9 13:49:25.335: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet1/2 (1), with Battery2 GigabitEthernet3/0 (999).
+*Nov  9 13:50:16.040: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet1/2 (1), with Battery2 GigabitEthernet3/0 (999).
+*Nov  9 13:51:04.963: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet1/2 (1), with Battery2 GigabitEthernet3/0 (999).
+*Nov  9 13:51:58.640: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet1/2 (1), with Battery2 GigabitEthernet3/0 (999).
+*Nov  9 13:52:50.676: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet1/2 (1), with Battery2 GigabitEthernet3/0 (999).
+*Nov  9 13:53:45.203: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet1/2 (1), with Battery2 GigabitEthernet3/0 (999).
+*Nov  9 13:54:42.456: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet1/2 (1), with Battery2 GigabitEthernet3/0 (999).
+*Nov  9 13:55:34.121: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet1/2 (1), with Battery2 GigabitEthernet3/0 (999).
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************
+
+User Access Verification
+
+Password:
+Password:
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************
+Batteries>en
+Password:
+Password:
+Password:
+% Bad secrets
+
+Batteries>en
+Password:
+Password:
+*Nov  9 13:56:29.297: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet1/2 (1), with Battery2 GigabitEthernet3/0 (999).

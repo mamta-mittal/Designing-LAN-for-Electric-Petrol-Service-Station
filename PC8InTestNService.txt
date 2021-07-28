@@ -1,0 +1,67 @@
+PC8- In Test And Service
+
+Welcome to Virtual PC Simulator, version 0.6.1
+Dedicated to Daling.
+Build time: Apr  3 2018 13:45:00
+Copyright (c) 2007-2014, Paul Meng (mirnshi@gmail.com)
+All rights reserved.
+
+VPCS is free software, distributed under the terms of the "BSD" licence.
+Source code and license can be found at vpcs.sf.net.
+For more information, please visit wiki.freecode.com.cn.
+
+Press '?' to get help.
+
+Executing the startup file
+
+
+PC8> show ip
+
+NAME        : PC8[1]
+IP/MASK     : 0.0.0.0/0
+GATEWAY     : 0.0.0.0
+DNS         :
+MAC         : 00:50:79:66:68:08
+LPORT       : 20170
+RHOST:PORT  : 127.0.0.1:20171
+MTU:        : 1500
+
+PC8> ip 10.15.5.210/24 10.15.5.1
+Checking for duplicate address...
+PC1 : 10.15.5.210 255.255.255.0 gateway 10.15.5.1
+
+PC8>
+PC8> ping 10.15.5.1
+84 bytes from 10.15.5.1 icmp_seq=1 ttl=255 time=44.787 ms
+84 bytes from 10.15.5.1 icmp_seq=2 ttl=255 time=8.045 ms
+84 bytes from 10.15.5.1 icmp_seq=3 ttl=255 time=99.329 ms
+^[[A84 bytes from 10.15.5.1 icmp_seq=4 ttl=255 time=42.751 ms
+84 bytes from 10.15.5.1 icmp_seq=5 ttl=255 time=9.781 ms
+
+PC8> ping 10.15.2.1
+84 bytes from 10.15.2.1 icmp_seq=1 ttl=255 time=12.313 ms
+84 bytes from 10.15.2.1 icmp_seq=2 ttl=255 time=12.850 ms
+84 bytes from 10.15.2.1 icmp_seq=3 ttl=255 time=9.785 ms
+^C
+PC8> ping 10.15.3.1
+84 bytes from 10.15.3.1 icmp_seq=1 ttl=255 time=11.612 ms
+84 bytes from 10.15.3.1 icmp_seq=2 ttl=255 time=27.997 ms
+^C
+PC8> ping 10.15.7.1
+84 bytes from 10.15.7.1 icmp_seq=1 ttl=255 time=22.015 ms
+84 bytes from 10.15.7.1 icmp_seq=2 ttl=255 time=13.005 ms
+84 bytes from 10.15.7.1 icmp_seq=3 ttl=255 time=7.245 ms
+^C
+PC8> ping 10.15.2.210
+10.15.2.210 icmp_seq=1 timeout
+10.15.2.210 icmp_seq=2 timeout
+10.15.2.210 icmp_seq=3 timeout
+^C
+PC8> ping 10.15.5.210
+10.15.5.210 icmp_seq=1 ttl=64 time=0.001 ms
+10.15.5.210 icmp_seq=2 ttl=64 time=0.001 ms
+10.15.5.210 icmp_seq=3 ttl=64 time=0.001 ms
+10.15.5.210 icmp_seq=4 ttl=64 time=0.001 ms
+10.15.5.210 icmp_seq=5 ttl=64 time=0.001 ms
+
+PC8>
